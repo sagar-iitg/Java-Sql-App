@@ -12,7 +12,7 @@ docker run --name db -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root mysql
 ```
 
 ```
-docker run -it db bash
+docker exec -it db bash
 
 ```
 
