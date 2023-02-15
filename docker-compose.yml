@@ -3,22 +3,18 @@ version: '3.3'
 services:
   db:
     image: 'mysql:latest'
-    restart:always
+    restart: always
     environment:
       MYSQL_DATABASE: 'db'
-      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'root'
     ports:
-      - "27017:27017"
+      - "3306:3306"
     volumes: 
       - mongodb: /data/db
     
   app:
     container_name: java-con
-    ports:
-      - "4000:4000"
-    build:
-      context: ./
-      dockerfile: ./services/api/app/Dockerfile
+    build: .
     links:
       - db
   
@@ -28,4 +24,3 @@ services:
 
 
 
-``
