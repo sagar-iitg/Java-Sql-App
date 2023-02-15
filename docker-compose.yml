@@ -1,11 +1,7 @@
 version: '3.7'
 
 services:
-  api:
-    build: .
-    container_name: java-app
-    links: 
-      - db
+  
 
   db:
     image: mysql
@@ -15,6 +11,11 @@ services:
       - '3306:3306'
     volumes:
       - mydb:/var/lib/mysql
+  api:
+    build: .
+    container_name: java-app
+    links: 
+      - db
     
 
     
