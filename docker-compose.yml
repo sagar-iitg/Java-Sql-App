@@ -10,13 +10,17 @@ services:
     ports:
       - "3306:3306"
     volumes: 
-      - mongodb: /data/db
+      - my-db: /var/lib/mysql
     
   app:
     container_name: java-con
     build: .
     links:
       - db
+    
+
+volumes:
+  my-db:
   
   
 
