@@ -8,7 +8,7 @@ public class DataConnection{
         
         Connection conn=null;
         Statement stmt=null;
-        final String DB_URL="jdbc:mysql://localhost:3306/";
+        final String DB_URL="jdbc:mysql://db:3306/";
         
         try{
 
