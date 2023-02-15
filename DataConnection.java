@@ -42,8 +42,8 @@ public class DataConnection{
                 String first=rs.getString("FirstName");
                 String last=rs.getString("LastName");
 
-                System.out.print("ID -"+id+" First Name: "+ first+" Last Name "+" "+ last);
-                System.out.println();
+                System.out.print("ID- "+id+"\nFirstName: "+ first+"\nLastName "+" "+ last);
+                System.out.println("--------");
 
                 
 
