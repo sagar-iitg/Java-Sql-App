@@ -1,23 +1,27 @@
-version: '3.3'
+version: '3.7'
 
 services:
+  api:
+    build: .
+    container_name: java-app
+    links: 
+      - db
+
   db:
-    image: 'mysql:latest'
+    image: mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
     ports:
-      - "3306:3306"
-    volumes: 
-      - my-db: /var/lib/mysql
+      - '3306:3306'
+    volumes:
+      - mydb:/var/lib/mysql
     
-  app:
-    build: .
-    links:
-      - db
+
     
 
 volumes:
-  my-db:
+  mydb:
+
   
   
 
